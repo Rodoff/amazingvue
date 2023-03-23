@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+</head>
+
+<body>
+    <header>
+        <div class="cabeza">
+            <img src="./assets/img/LogoAmazingEvents.png" alt="logo amazing Events">
+            <input type="checkbox" id="menu-check">
+            <label id="menu" for="menu-check">
+                <span id="menu-abrir">&#9776;</span>
+                <span id="menu-cerrar">X</span>
+            </label>
+            <nav>
+                <ul class="nav justify-content-end nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./upcoming.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" style="background-color: #D90368" href="#">Past
+                            Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./contact.html">contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./stats.html">stats</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="flex-grow-1">
+        <div id="app">
+        <div class="d-flex justify-content-between align-item-center carro">
+            <div class="prev d-flex"><a class="grow" href="./upcoming.html">&lt;</a></div>
+            <div class="actual d-flex"><a class="grow" href="#">Past Events</a></div>
+            <div class="next d-flex"><a class="grow" href="./contact.html">&gt;</a></div>
+        </div>
+    {{filterData}}
+
+        <div class="encabeza">
+            <div class="cate d-flex flex-wrap" id="probando">
+                <div v-if="categorias" v-for="each in categorias">
+                    <input v-model="checks" class="class_checks" type="checkbox"
+                        :id="each" :name="each" :value="each">
+                    <label class="qqq" :for="each">{{each}}</label>
+                </div>
+
+            </div>
+
+            <div id="SearchCHECK">
+                <form class="busca d-flex" role="search">
+                    <input v-model="texto" class="form-control" id="id_search"
+                        type="search" placeholder="Search" value="" aria-label="Search">
+                    <button class=" sear btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="tarjetas" id="cardEvents">
+            <div class="contene d-flex flex-row flex-wrap">
+                <div v-if="dataFilter.length" v-for="each in dataFilter" class="card" style="width: 18rem;">
+                    <img v-bind:src="each.image" class="card-img-top" :alt="each.name">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{each.name}} </h5>
+                        <p class="card-text"> {{each.description}} </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <p>Price: $ {{each.price}} </p>
+                        <a v-bind:href="'./details.html?id=' + each.id" class="bote btn-outline-success">View Event >></a>
+                    </div>
+                </div>
+                <div v-else="dataFilter.length" class="card" style="width: 18rem;">
+                    <img src="https://i.postimg.cc/Hk5FZZ1D/Png-Item-5616833.png" class="card-img-top" alt="imagen not found">
+                    <div class="card-body">
+                        <h5 class="card-title"> Event </h5>
+                        <p class="card-text"> Not Found </p>
+                    </div>
+                     </div>
+            </div>
+                        </div>
+      
+    
+</div>
+
+</main>
+    <footer>
+        <div class="logos">
+            <figure>
+                <img class="social grow" src="./assets/img/Icono-Whatsapp.png" alt="logoFacebook">
+            </figure>
+            <figure>
+                <img class="social  grow" src="./assets/img/Face-Best.png" alt="logoFacebook">
+            </figure>
+            <figure>
+                <img class="social  grow" src="./assets/img/insta.png" alt="logoInstagram">
+            </figure>
+        </div>
+        <div class="cohorte">
+            <h5>FE05-TN</h5>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./script/script3vue.js"></script>
+    
+</body>
+
+</html>

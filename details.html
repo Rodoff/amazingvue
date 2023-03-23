@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
+</head>
+
+<body>
+    <header>
+        <div class="cabeza">
+            <img src="./assets/img/LogoAmazingEvents.png" alt="logo amazing Events">
+            <input type="checkbox" id="menu-check">
+            <label id="menu" for="menu-check">
+                <span id="menu-abrir">&#9776;</span>
+                <span id="menu-cerrar">X</span>
+            </label>
+            <nav>
+                <ul class="nav justify-content-end nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./upcoming.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./past.html">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./contact.html">contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transUp" href="./stats.html">stats</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="app">
+    <main class="flex-grow-1">
+        <div class="d-flex align-item-center justify-content-center carro">
+            <div class="actual d-flex"><a class="grow" href="#">Details </a></div>
+        </div>
+
+        <div class="tarjeta" id="detalle">
+            <div class="contene d-flex flex-row flex-wrap">
+                <div v-if="evento" class="card" style="width: 800px;">
+                 <img v-bind:src="evento.image" class="card-img-tope" :alt="evento.name">
+                <div class="card-body">
+                <h5 class="card-title"> {{evento.name}} </h5>
+                <p class="card-text"> {{evento.description}} </p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Category: {{evento.category}} </li>
+                    <li class="list-group-item">Date: {{evento.date}} </li>
+                    <li class="list-group-item">Place: {{evento.place}} </li>
+                </ul>
+               </div>
+               <div class="card-footer d-flex justify-content-between">
+                <p>Price: ${tarj.price}</p>
+            <a href="./index.html" class="bote btn-outline-success"> &lt;&lt; Back </a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+</div>
+    </main>
+    <footer>
+        <div class="logos">
+            <figure>
+                <img class="social grow" src="./assets/img/Icono-Whatsapp.png" alt="logoFacebook">
+            </figure>
+            <figure>
+                <img class="social  grow" src="./assets/img/Face-Best.png" alt="logoFacebook">
+            </figure>
+            <figure>
+                <img class="social  grow" src="./assets/img/insta.png" alt="logoInstagram">
+            </figure>
+        </div>
+        <div class="cohorte">
+            <h5>FE05-TN</h5>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./script/detallevue.js"></script>
+</body>
+
+
+</html>

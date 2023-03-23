@@ -51,7 +51,10 @@
             <div class="next d-flex"><a class="grow" href="./contact.html">&gt;</a></div>
         </div>
     {{filterData}}
-
+    <div v-if="loading" class="preload">
+        <img src="./assets/img/Spin-0.9s-194px.gif" alt="imagen preload" >
+        </div>
+        <div v-else>
         <div class="encabeza">
             <div class="cate d-flex flex-wrap" id="probando">
                 <div v-if="categorias" v-for="each in categorias">
@@ -93,7 +96,7 @@
             </div>
                         </div>
       
-    
+                    </div>
 </div>
 
 </main>

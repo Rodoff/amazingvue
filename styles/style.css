@@ -15,7 +15,13 @@ body {
     background-size: auto;
     background-position: center;
 }
-
+.preload {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
 header img {
     width: 150px;
     height: 55px;

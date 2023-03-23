@@ -4,6 +4,7 @@ const url = 'https://mh.up.railway.app/api/amazing-events?time=upcoming'
 const app = createApp({
     data() {
         return {
+            loading: true,
             eventos: [],
             categorias: [],
             checks: [],
@@ -22,6 +23,7 @@ const app = createApp({
                 response = await fetchResponse.json()
                 this.eventos = response.events
                 this.dataFilter = response.events
+                this.loading = false
             } catch (error) {
             }
         },

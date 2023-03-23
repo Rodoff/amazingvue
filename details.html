@@ -47,6 +47,10 @@
         <div class="d-flex align-item-center justify-content-center carro">
             <div class="actual d-flex"><a class="grow" href="#">Details </a></div>
         </div>
+        <div v-if="loading" class="preload">
+            <img src="./assets/img/Spin-0.9s-194px.gif" alt="imagen preload" >
+            </div>
+            <div v-else>
 
         <div class="tarjeta" id="detalle">
             <div class="contene d-flex flex-row flex-wrap">
@@ -69,7 +73,7 @@
             </div>
         </div>
 
-
+    </div>
 </div>
     </main>
     <footer>

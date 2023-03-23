@@ -4,6 +4,7 @@ const url = 'https://mh.up.railway.app/api/amazing-events'
 const app = createApp({
     data() {
         return {
+            loading: true,
             evento: [],
 
         }
@@ -23,6 +24,7 @@ const app = createApp({
                 response = response.events
                 response = response.find(each => each.id === id_query )
                 this.evento = response
+                this.loading = false
                 console.log(this.evento)
                 
             } catch (error) {
